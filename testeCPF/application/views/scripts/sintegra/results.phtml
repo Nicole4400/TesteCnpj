@@ -1,0 +1,30 @@
+<div id="body">
+	<p>Sintegra Results</p>
+	
+	      <table>
+        <tr>
+          <th>Id Usuario</th>
+          <th>CNPJ</th>
+          <th>Json Associado</th>
+          <th>Deletar</th>
+        </tr>
+<?php foreach ( $this->results as $entry ) {?>
+ <tr>
+        	<td><?php echo $entry['id_usuario']?></td>
+          	<td><?php echo $entry['cnpj']?></td>
+          	<td style="word-wrap: break-word"><?php echo $entry['json']?></td>
+          	<td><form action="/sintegra/delete">
+          		<input type="hidden" name="id" value="<?php echo $entry['id']; ?>" />
+    			<input type="submit" value="Delete">
+		</form></td>
+          		<br /><br />
+          		</tr>
+ 
+<?php } ?>
+
+      </table>
+<form action="/sintegra/index">
+    <input type="submit" value="Go to back to search">
+</form>
+	
+</div>

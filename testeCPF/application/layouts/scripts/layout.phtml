@@ -1,0 +1,13 @@
+<?php echo $this->layout()->content;
+
+
+if(isset($_SESSION['login'])) {
+	 ?>
+<form action="/login/logout">
+    <input type="submit" value="Logout">
+</form>
+<?php
+}
+
+
+?>
